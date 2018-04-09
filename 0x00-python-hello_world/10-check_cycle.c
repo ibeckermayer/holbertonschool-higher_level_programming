@@ -17,7 +17,7 @@ int been_seen(listint_t **seen, listint_t *list)
 	while (seen[i])
 	{
 		if (seen[i] == list)
-			return(1);
+			return (1);
 		i++;
 	}
 	return (0);
@@ -36,7 +36,7 @@ int check_cycle(listint_t *list)
 	seen = malloc(sizeof(*seen) * num_seen);
 	seen[0] = list;
 
-	while(list)
+	while (list)
 	{
 		if (num_seen > 1)
 		{
