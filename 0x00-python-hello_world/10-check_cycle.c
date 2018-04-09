@@ -22,6 +22,7 @@ int been_seen(listint_t **seen, listint_t *list)
 	}
 	return (0);
 }
+
 /**
  * check_cycle - checks if a singly linked list has a cycle in it.
  * @list: the head of the list
