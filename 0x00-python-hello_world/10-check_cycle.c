@@ -33,20 +33,22 @@ int check_cycle(listint_t *list)
 	listint_t **seen;
 	int num_seen = 1;
 
-	seen = malloc(sizeof(*seen) * num_seen);
+	seen = malloc(sizeof(*seen) * 2);
 	seen[0] = list;
+	seen[1] = NULL;
 
 	while (list)
 	{
 		if (num_seen > 1)
 		{
-			seen = realloc(seen, sizeof(*seen) * num_seen);
+			seen = realloc(seen, sizeof(*seen) * (num_seen + 1));
 			if (been_seen(seen, list))
 			{
 				free(seen);
 				return (1);
 			}
 			seen[num_seen - 1] = list;
+			seen[num_seen] = NULL;
 		}
 		list = list->next;
 		num_seen++;
