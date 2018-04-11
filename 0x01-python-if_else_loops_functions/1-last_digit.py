@@ -9,7 +9,7 @@ if number >= 0:
         outp = outp + "and is zero"
     else:
         outp = outp + "and is less than 6 and not 0"
-        print(outp.format(number, number % 10))
+    print(outp.format(number, number % 10))
 else:
     if number % 10 == 0:
         outp = outp + "and is zero"
