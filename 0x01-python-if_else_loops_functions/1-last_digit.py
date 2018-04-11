@@ -6,13 +6,13 @@ if number >= 0:
     if number % 10 > 5:
         outp = outp + "and is greater than 5"
     elif number % 10 == 0:
-        outp = outp + "and is zero"
+        outp = outp + "and is 0"
     else:
         outp = outp + "and is less than 6 and not 0"
     print(outp.format(number, number % 10))
 else:
     if number % 10 == 0:
-        outp = outp + "and is zero"
+        outp = outp + "and is 0"
         print(outp.format(number, number % 10))
     else:
         outp = outp + "and is less than 6 and not 0"
