@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <time.h>
 #include "lists.h"
 
 /**
@@ -10,44 +11,41 @@
  */
 int main(void)
 {
-    listint_t *head;
-    listint_t *current;
-    listint_t *temp;
-    int i;
+	listint_t *head;
+	listint_t *current;
+	listint_t *reset;
+	clock_t start;
+	clock_t end;
+	clock_t diff;
+	int i;
 
-    head = NULL;
-    add_nodeint(&head, 0);
-    add_nodeint(&head, 1);
-    add_nodeint(&head, 2);
-    add_nodeint(&head, 3);
-    add_nodeint(&head, 4);
-    add_nodeint(&head, 98);
-    add_nodeint(&head, 402);
-    add_nodeint(&head, 1024);
-    print_listint(head);
+	head = NULL;
+	for (i = 0; i < 1001; i++)
+		add_nodeint(&head, i);
 
-    if (check_cycle(head) == 0)
-        printf("Linked list has no cycle\n");
-    else if (check_cycle(head) == 1)
-        printf("Linked list has a cycle\n");
+	current = head;
+	while (current->next != NULL)
+		current = current->next;
+	reset = current;
+	current->next = head;
 
-    current = head;
-    for (i = 0; i < 4; i++)
-        current = current->next;
-    temp = current->next;
-    current->next = head;
+	start = clock();
 
-    if (check_cycle(head) == 0)
-        printf("Linked list has no cycle\n");
-    else if (check_cycle(head) == 1)
-        printf("Linked list has a cycle\n");
+	for (i = 0; i < 10; i++)
+	        check_cycle(head);
 
-    current = head;
-    for (i = 0; i < 4; i++)
-        current = current->next;
-    current->next = temp;
+	end = clock();
 
-    free_listint(head);
+	diff = (double)(end - start) / 10;
 
-    return (0);
+	if (diff > 40)
+		printf("Runtime too long\n");
+	else
+		printf("OK\n");
+
+	reset->next = NULL;
+
+	free_listint(head);
+
+	return (0);
 }
