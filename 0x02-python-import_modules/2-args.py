@@ -12,4 +12,4 @@ if __name__ == '__main__':
         c = 1
         for arg in sys.argv[1:]:
             print("{:d}: {:s}".format(c, arg))
-            c+=1
+            c += 1
