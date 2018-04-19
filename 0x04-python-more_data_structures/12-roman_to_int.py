@@ -8,6 +8,9 @@ def roman_to_int(roman_string):
 
         last = 1
         for i in range(len(roman_string) - 1):
+            if not last:
+                last = 1
+                continue
             key = roman_string[i] + roman_string[i + 1]
             if key in roms:
                 last = 0
