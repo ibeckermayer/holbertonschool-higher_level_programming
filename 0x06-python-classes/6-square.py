@@ -7,7 +7,8 @@ class Square:
         position (tuple(int, int), optional): touple of ints
             greater than 0 to define position
     """
-    def __init__(self, size=0, position=(0,0)):
+
+    def __init__(self, size=0, position=(0, 0)):
         """The constructor for square
         """
         self.size = size
@@ -94,8 +95,6 @@ class Square:
         if value[1] < 0:
             return 0
         return 1
-
-
 
     def my_print(self):
         """Prints the square to stdout using #'s
