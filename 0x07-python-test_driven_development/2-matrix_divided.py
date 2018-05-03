@@ -14,10 +14,13 @@ def is_matrix(matrix):
     for row in matrix:
         if not isinstance(row, list):
             return False
+        if len(row) == 0:
+            return False
         for i in row:
             if not isinstance(i, (int, float)):
                 return False
     return True
+
 
 def has_equal_rows(matrix):
     """checks if a matrix has equal sized rows
@@ -39,6 +42,7 @@ def has_equal_rows(matrix):
             return False
     return True
 
+
 def matrix_divided(matrix, div):
     """divides all elements of a matrix
 
@@ -57,8 +61,8 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: div must not be 0
     """
     if not is_matrix(matrix):
-        raise TypeError("matrix must be a matrix (list of lists)\
-        of integers/floats")
+        s = "matrix must be a matrix (list of lists) of integers/floats"
+        raise TypeError(s)
     if not has_equal_rows(matrix):
         raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):
