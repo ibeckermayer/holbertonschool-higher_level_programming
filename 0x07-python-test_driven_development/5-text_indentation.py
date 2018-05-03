@@ -12,14 +12,21 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     splitters = [".", "?", ":"]
-    for splitter in splitters:
-        if splitter == ".":
-            split = text.split(".")
+    toks = []
+    beg = 0
+    end = 0
+
+    while end < len(text):
+        if not text[end] in splitters and not end == len(text) - 1:
+            end += 1
+            continue
         else:
-            split = [t.split(splitter) for t in split]
-            split = [item for sublist in split for item in sublist]
-    for i in range(len(split)):
-        print(split[i].strip(), end="")
-        if i < len(split) - 1:
+            end += 1
+            toks.append(text[beg:end])
+            beg = end
+
+    for i in range(len(toks)):
+        print(toks[i].strip(), end="")
+        if i < len(toks) - 1:
             print()
             print()
