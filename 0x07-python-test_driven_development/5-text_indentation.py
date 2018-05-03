@@ -26,7 +26,8 @@ def text_indentation(text):
             beg = end
 
     for i in range(len(toks)):
-        print(toks[i].strip(), end="")
-        if i < len(toks) - 1:
+        tok = toks[i].strip()
+        print(tok, end="")
+        if tok and tok[-1] in splitters:
             print()
             print()
