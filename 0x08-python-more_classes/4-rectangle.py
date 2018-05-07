@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 class Rectangle:
     """A Rectangle
     """
@@ -87,28 +88,6 @@ class Rectangle:
             return 0
         return self.__width * 2 + self.__height * 2
 
-    def area(self):
-        """returns the area of the rectangle
-
-        Returns:
-            int: the area of the rectangle
-
-        """
-        return self.__width * self.__height
-
-    def perimeter(self):
-        """returns the perimeter of the rectangle
-
-        If either width or height is 0, returns 0
-
-        Returns:
-            int: the perimeter of the rectangle
-
-        """
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return self.__width * 2 + self.__height * 2
-
     def __str__(self):
         """returns the rectangle with #'s
 
@@ -130,8 +109,7 @@ class Rectangle:
         """returns a string for recreating the rectangle
 
         Returns:
-            str: the rectangle with #'s or empty string width or height = 0
+            str: a string for recreating the rectangle
 
         """
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) + ")"
-
+        return "Rectangle("+str(self.__width)+", "+str(self.__height)+")"
