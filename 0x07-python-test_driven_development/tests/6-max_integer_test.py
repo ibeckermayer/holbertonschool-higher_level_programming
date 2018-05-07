@@ -118,8 +118,8 @@ class TestMax_Integer(unittest.TestCase):
         """
         self.assertRaises(TypeError,
                           lambda: max_integer([
-                                  [[12, 11], 11],
-                                  [[12, 11], [12, 40]]
+                              [[12, 11], 11],
+                              [[12, 11], [12, 40]]
                           ]))
 
     def test_with_bool_1(self):
@@ -184,13 +184,13 @@ class TestMax_Integer(unittest.TestCase):
     def test_with_dic(self):
         """Testing using a dictionary with sequential keys starting at 0
         """
-        result = max_integer({0:100, 1:2, 2:3})
+        result = max_integer({0: 100, 1: 2, 2: 3})
         self.assertEqual(result, 100)
 
     def test_with_dic_err(self):
         """Test when keys aren't sequential starting at 0
         """
-        self.assertRaises(KeyError, lambda: max_integer({0:100, 4:3, 3:4}))
+        self.assertRaises(KeyError, lambda: max_integer({0: 100, 4: 3, 3: 4}))
 
     def test_with_empty_set(self):
         """Test with an empty set
