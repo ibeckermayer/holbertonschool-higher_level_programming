@@ -74,6 +74,16 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = height
 
+    # @print_symbol.setter
+    # def print_symbol(self, print_symbol):
+    #     """setter for print_symbol
+
+    #     Args:
+    #        print_symbol (str): the print_symbol
+
+    #     """
+    #     self.print_symbol = print_symbol
+
     def area(self):
         """returns the area of the rectangle
 
@@ -108,7 +118,7 @@ class Rectangle:
             return rec
         for h in range(self.__height):
             for w in range(self.__width):
-                rec += Rectangle.print_symbol
+                rec += str(self.print_symbol)
             if h < self.__height - 1:
                 rec += "\n"
         return rec
@@ -129,4 +139,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle…")
-
