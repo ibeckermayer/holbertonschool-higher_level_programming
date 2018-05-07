@@ -6,9 +6,11 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): total number of instances
+        print_symbol (str): the symbol the rectangle will be printed with
 
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """constructor
@@ -106,7 +108,7 @@ class Rectangle:
             return rec
         for h in range(self.__height):
             for w in range(self.__width):
-                rec += "#"
+                rec += Rectangle.print_symbol
             if h < self.__height - 1:
                 rec += "\n"
         return rec
