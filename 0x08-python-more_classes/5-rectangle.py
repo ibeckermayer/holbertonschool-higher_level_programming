@@ -119,4 +119,4 @@ class Rectangle:
 
         Prints 'Bye rectangle…'
         """
-        print("Bye rectangle…")
+        print("Bye rectangle...")
