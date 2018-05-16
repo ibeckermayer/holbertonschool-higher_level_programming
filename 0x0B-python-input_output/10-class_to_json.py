@@ -13,4 +13,4 @@ def class_to_json(obj):
         dict: the dictionary
 
     """
-    return json.dumps(obj.__dict__)
+    return obj.__dict__
