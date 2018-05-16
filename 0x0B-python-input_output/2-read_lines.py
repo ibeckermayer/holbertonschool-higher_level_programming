@@ -8,7 +8,7 @@ def read_file(filename=""):
        filename (str) (default ""): the file name
 
     """
-    with open(filename, 'r') as f:
+    with open(filename, 'r', encoding="UTF8") as f:
         print(f.read(), end="")
 
 
@@ -26,7 +26,7 @@ def read_lines(filename="", nb_lines=0):
     if nb_lines <= 0:
         read_file(filename)
     else:
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding="UTF8") as f:
             for i, l in enumerate(f):
                 if i < nb_lines:
                     print(l, end="")
