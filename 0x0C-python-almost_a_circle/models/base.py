@@ -84,3 +84,24 @@ class Base:
 
         """
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+
+        Args:
+            **dictionary (dict): a dictionary of attributes
+
+        Returns:
+            Base: type of base with all attributes set
+
+        """
+        if len(dictionary) == 5:
+            import models.rectangle
+            shape = models.rectangle.Rectangle(1, 1)
+            shape.update(**dictionary)
+        if len(dictionary) == 4:
+            import models.square
+            shape = models.square.Square(1, 1)
+            shape.update(**dictionary)
+        return shape
