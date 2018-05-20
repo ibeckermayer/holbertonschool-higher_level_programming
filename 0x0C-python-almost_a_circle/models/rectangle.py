@@ -159,7 +159,7 @@ class Rectangle(Base):
         """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
 
-    # def update(self, args*):
+    def update(self, *args):
         """assigns an argument to each attribute
 
         Args:
@@ -173,3 +173,17 @@ class Rectangle(Base):
             ValueError: If param2 is equal to param1.
 
         """
+        ups = [self.id, self.width, self.height, self.x, self.y]
+        i = 0
+        for arg in args:
+            if i == 0:
+                self.id = arg
+            elif i == 1:
+                self.width = arg
+            elif i == 2:
+                self.height = arg
+            elif i == 3:
+                self.x = arg
+            elif i == 4:
+                self.y = arg
+            i += 1
