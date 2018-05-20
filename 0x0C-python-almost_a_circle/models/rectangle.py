@@ -150,3 +150,26 @@ class Rectangle(Base):
                     rec += "\n"
             print(rec)
 
+    def __str__(self):
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+
+        Returns:
+            str
+
+        """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+
+    # def update(self, args*):
+        """assigns an argument to each attribute
+
+        Args:
+           self ${1:arg1}
+           args* ${2:arg2}
+
+        Returns:
+            bool: True if successful, False otherwise.
+
+        Raises:
+            ValueError: If param2 is equal to param1.
+
+        """
