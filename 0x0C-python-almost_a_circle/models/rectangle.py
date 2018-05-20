@@ -137,9 +137,13 @@ class Rectangle(Base):
         """
         rec = ""
         if self.width == 0 or self.height == 0:
-            print()
+            pass
         else:
+            for i in range(self.y):
+                print()
             for h in range(self.height):
+                for i in range(self.x):
+                    rec += str(" ")
                 for w in range(self.width):
                     rec += str("#")
                 if h < self.height - 1:
