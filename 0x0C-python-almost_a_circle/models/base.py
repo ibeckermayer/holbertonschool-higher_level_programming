@@ -47,6 +47,11 @@ class Base:
             list_objs (list): a list of instances who inherits of Base
 
         """
+        if not list_objs:
+            with open("Rectangle.json", 'w') as f:
+                f.write(Base.to_json_string(None))
+            return
+
         import models.rectangle
         import models.square
         rects = []
@@ -66,3 +71,16 @@ class Base:
         if len(list_dictionaries_sqr) > 0:
             with open("Square.json", 'w') as f:
                 f.write(Base.to_json_string(list_dictionaries_sqr))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string
+
+        Args:
+            json_string (str): a string of a list of dictionaries
+
+        Returns:
+            list: the list of the JSON string representation json_string
+
+        """
+        return json.loads(json_string)
