@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 
+
 class Base:
     """Base class for shapes
 
@@ -28,13 +29,40 @@ class Base:
         """returns the JSON string representation of list_dictionaries
 
         Args:
-            list_dictionaries (str): a list of dictionaries
+            list_dictionaries (list): a list of dictionaries
 
         Returns:
             str: string representation
 
         """
-        if list_dictionaries:
-            return json.dumps(list_dictionaries)
-        else:
+        if not list_dictionaries:
             return ("[]")
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file
+
+        Args:
+            list_objs (list): a list of instances who inherits of Base
+
+        """
+        import models.rectangle
+        import models.square
+        rects = []
+        sqrs = []
+        for obj in list_objs:
+            if isinstance(obj, models.rectangle.Rectangle):
+                rects.append(obj)
+            if isinstance(obj, models.square.Square):
+                sqrs.append(obj)
+
+        list_dictionaries_rect = [rect.to_dictionary() for rect in rects]
+        list_dictionaries_sqr = [sqr.to_dictionary() for sqr in sqrs]
+
+        if len(list_dictionaries_rect) > 0:
+            with open("Rectangle.json", 'w') as f:
+                f.write(Base.to_json_string(list_dictionaries_rect))
+        if len(list_dictionaries_sqr) > 0:
+            with open("Square.json", 'w') as f:
+                f.write(Base.to_json_string(list_dictionaries_sqr))
