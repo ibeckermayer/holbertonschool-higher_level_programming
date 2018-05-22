@@ -74,7 +74,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = height
 
-
     @property
     def x(self):
         """getter for x
@@ -159,7 +158,9 @@ class Rectangle(Base):
             str
 
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute

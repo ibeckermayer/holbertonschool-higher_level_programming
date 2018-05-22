@@ -107,4 +107,3 @@ class Square(Rectangle):
         self_dict["x"] = self.x
         self_dict["y"] = self.y
         return self_dict
-
