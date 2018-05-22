@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""for checker
+"""
 from models.base import Base
 
 
