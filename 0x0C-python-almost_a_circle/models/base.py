@@ -100,12 +100,9 @@ class Base:
             Base: type of base with all attributes set
 
         """
-        if len(dictionary) == 5:
-            import models.rectangle
-            shape = models.rectangle.Rectangle(1, 1)
-            shape.update(**dictionary)
-        if len(dictionary) == 4:
-            import models.square
-            shape = models.square.Square(1, 1)
-            shape.update(**dictionary)
+        if cls.__name__ == 'Rectangle':
+            shape = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            shape = cls(1)
+        shape.update(**dictionary)
         return shape
