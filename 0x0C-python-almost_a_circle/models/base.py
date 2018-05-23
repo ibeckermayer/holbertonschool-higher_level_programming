@@ -107,18 +107,19 @@ class Base:
             shape.update(**dictionary)
         return shape
 
-    @classmethod
-    def load_from_file(cls):
-        """returns an instance with all attributes already set
+#     @classmethod
+#     def load_from_file(cls):
+#         """returns an instance with all attributes already set
 
-        Returns:
-            list: a list of instance
+#         Returns:
+#             list: a list of instance
 
-        """
-        filename = cls.__name__ + ".json"
-        try:
-            with open(filename, 'r') as f:
-                data = f.read().replace('\n', '')
-                return cls.from_json_string(data)
-        except FileNotFoundError:
-            return []
+#         """
+#         filename = cls.__name__ + ".json"
+#         try:
+#             with open(filename, 'r') as f:
+#                 data = f.read().replace('\n', '')
+#                 return cls.from_json_string(data)
+#         except FileNotFoundError:
+#             return []
+# n
