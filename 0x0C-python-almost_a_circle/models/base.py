@@ -104,5 +104,21 @@ class Base:
             shape = cls(1, 1)
         elif cls.__name__ == 'Square':
             shape = cls(1)
-        shape.update(**dictionary)
+            shape.update(**dictionary)
         return shape
+
+    @classmethod
+    def load_from_file(cls):
+        """returns an instance with all attributes already set
+
+        Returns:
+            list: a list of instance
+
+        """
+        filename = cls.__name__ + ".json"
+        try:
+            with open(filename, 'r') as f:
+                data = f.read().replace('\n', '')
+                return cls.from_json_string(data)
+        except FileNotFoundError:
+            return []
