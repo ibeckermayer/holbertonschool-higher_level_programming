@@ -54,7 +54,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsNotNone(Base.from_json_string.__doc__)
 
     def test_base_create_docstring(self):
-p        self.assertIsNotNone(Base.create.__doc__)
+        self.assertIsNotNone(Base.create.__doc__)
 
     def test_base_save_to_file_docstring(self):
         self.assertIsNotNone(Base.save_to_file.__doc__)
