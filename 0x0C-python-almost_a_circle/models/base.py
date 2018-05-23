@@ -50,7 +50,7 @@ class Base:
 
         """
         if not list_objs:
-            with open("Rectangle.json", 'w') as f:
+            with open(cls.__name__ + ".json", 'w') as f:
                 f.write(Base.to_json_string(None))
             return
 
