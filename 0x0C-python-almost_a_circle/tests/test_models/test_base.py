@@ -11,6 +11,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBaseClass(unittest.TestCase):
     '''Testing Base class'''
 
@@ -53,7 +54,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertIsNotNone(Base.from_json_string.__doc__)
 
     def test_base_create_docstring(self):
-        self.assertIsNotNone(Base.create.__doc__)
+p        self.assertIsNotNone(Base.create.__doc__)
 
     def test_base_save_to_file_docstring(self):
         self.assertIsNotNone(Base.save_to_file.__doc__)

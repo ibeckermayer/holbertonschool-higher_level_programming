@@ -119,6 +119,10 @@ class Base:
         try:
             with open(filename, 'r') as f:
                 data = f.read().replace('\n', '')
-                return cls.from_json_string(data)
+                lod = cls.from_json_string(data)
+                loi = []
+                for d in lod:
+                    loi.append(cls.create(**d))
+                return loi
         except FileNotFoundError:
             return []
