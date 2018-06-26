@@ -1,0 +1,10 @@
+Enter password: 
+genre   number_shows
+Drama   5
+Comedy  4
+Mystery 2
+Crime   2
+Suspense    2
+Thriller    2
+Adventure   1
+Fantasy 1
