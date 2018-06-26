@@ -1,6 +1,2 @@
-Enter password: 
-score   name
-18  Aria
-12  Aria
-10  John
-10  Bob
+-- lists all records of the table second_table
+SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
