@@ -1,8 +1,4 @@
-Enter password: 
-id  name    name
-1   San Francisco   California
-2   San Jose    California
-4   Page    Arizona
-6   Paris   Texas
-7   Houston Texas
-8   Dallas  Texas
+-- lists all cities contained in the database hbtn_0d_usa
+SELECT cities.id, cities.name, states.name
+FROM cities JOIN states ON cities.state_id = states.id
+ORDER BY cities.id ASC;
