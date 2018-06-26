@@ -1,4 +1,5 @@
-Enter password: 
-id  name
-1   San Francisco
-2   San Jose
+SELECT id, name FROM cities
+WHERE state_id = (
+      SELECT id FROM states
+      WHERE name = "California")
+ORDER by id ASC;
