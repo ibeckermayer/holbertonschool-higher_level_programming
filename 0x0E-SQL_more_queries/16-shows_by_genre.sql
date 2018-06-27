@@ -1,23 +1,5 @@
-Enter password: 
-title   name
-Better Call Saul    NULL
-Breaking Bad    Crime
-Breaking Bad    Drama
-Breaking Bad    Suspense
-Breaking Bad    Thriller
-Dexter  Crime
-Dexter  Drama
-Dexter  Mystery
-Dexter  Suspense
-Dexter  Thriller
-Game of Thrones Adventure
-Game of Thrones Drama
-Game of Thrones Fantasy
-Homeland    NULL
-House   Drama
-House   Mystery
-New Girl    Comedy
-Silicon Valley  Comedy
-The Big Bang Theory Comedy
-The Last Man on Earth   Comedy
-The Last Man on Earth   Drama
+-- all shows, and all genres linked to that show, from the database hbtn_0d_tvshows
+SELECT tv_shows.title, tv_genres.name
+FROM tv_shows RIGHT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
+ORDER BY tv_shows.title, tv_genres.name ASC;
