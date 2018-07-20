@@ -23,3 +23,5 @@ if __name__ == "__main__":
             print(result[i][0], end=", ")
         else:
             print(result[i][0])
+    c.close()
+    db.close()
