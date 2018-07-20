@@ -11,7 +11,7 @@ if __name__ == "__main__":
                          db=sys.argv[3],
                          port=3306)
     c = db.cursor()
-    c.execute("""SELECT * FROM states WHERE name LIKE "N%" ORDER BY id ASC""")
+    c.execute("""SELECT * FROM states WHERE name LIKE BINARY "N%" ORDER BY id ASC""")
     result = c.fetchall()
     for row in result:
         print(row)
