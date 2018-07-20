@@ -15,5 +15,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for item in session.query(State).filter(State.name.contains(sys.argv[4])):
+    for item in session.query(State).filter_by(name=sys.argv[4]):
         print("{:d}".format(item.id))
