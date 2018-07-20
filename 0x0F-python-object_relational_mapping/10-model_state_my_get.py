@@ -5,7 +5,7 @@ List all State objects with a
 if __name__ == "__main__":
     import sys
     from model_state import Base, State
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, func
     from sqlalchemy.orm import sessionmaker
 
     mysql = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1],
@@ -15,5 +15,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for item in session.query(State).filter_by(name=sys.argv[4]):
+    for item in session.query(State).filter(
+            State.name == func.binary(sys.argv[4])
+    ):
         print("{:d}".format(item.id))
