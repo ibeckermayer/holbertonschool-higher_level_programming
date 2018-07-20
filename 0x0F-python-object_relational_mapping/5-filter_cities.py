@@ -17,8 +17,9 @@ if __name__ == "__main__":
     WHERE states.name LIKE BINARY %s
     ORDER BY cities.id ASC""", (sys.argv[4],))
     result = c.fetchall()
-    for i in range(len(result)):
-        if i < len(result) - 1:
+    res_len = len(result)
+    for i in range(res_len):
+        if i < res_len - 1:
             print(result[i][0], end=", ")
         else:
             print(result[i][0])
