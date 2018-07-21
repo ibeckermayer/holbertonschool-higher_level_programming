@@ -21,3 +21,10 @@ if __name__ == "__main__":
     conn.execute(ins)
     u = update(State).where(State.id==2).values({"name": "New Mexico"})
     conn.execute(u)
+    item = session.query(State).filter(
+        State.name == func.binary("Louisiana")).first()
+    if item is not None:
+        print("{:d}".format(item.id))
+    else:
+        print("Not found")
+
