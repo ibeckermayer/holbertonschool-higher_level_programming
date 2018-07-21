@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     item = session.query(State).filter(
-            State.name == func.binary(sys.argv[4])).first()
+        State.name == func.binary(sys.argv[4])).first()
     if item is not None:
         print("{:d}".format(item.id))
     else:
