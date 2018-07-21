@@ -20,5 +20,3 @@ if __name__ == "__main__":
     session.add(louisiana)
     session.commit()
     print(louisiana.id)
-    u = update(State).where(State.id == 2).values({"name": "New Mexico"})
-    session.execute(u)
