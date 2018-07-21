@@ -7,7 +7,7 @@ if __name__ == "__main__":
     from model_state import Base, State
     from sqlalchemy import create_engine, func
     from sqlalchemy.orm import sessionmaker
-    from sqlalchemy.sql import insert
+    from sqlalchemy.sql import insert, update
 
     mysql = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1],
                                                              sys.argv[2],
@@ -19,3 +19,5 @@ if __name__ == "__main__":
     conn = engine.connect()
     ins = insert(State).values({"name": "Louisiana"})
     conn.execute(ins)
+    u = update(State).where(State.id==2).values({"name": "New Mexico"})
+    conn.execute(u)
