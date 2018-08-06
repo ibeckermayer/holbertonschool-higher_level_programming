@@ -4,7 +4,7 @@ from requests.auth import HTTPBasicAuth
 from sys import argv
 
 if __name__ == "__main__":
-    url = "https://api.github.com/users"
+    url = "https://api.github.com/users/" + argv[1]
     req = requests.get(url, auth=HTTPBasicAuth(argv[1], argv[2]))
     json_dict = req.json()
     print(json_dict.get("id"))
