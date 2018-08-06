@@ -8,12 +8,3 @@ if __name__ == "__main__":
     req = requests.get(url, auth=HTTPBasicAuth(argv[1], argv[2]))
     json_dict = req.json()
     print(json_dict.get("id"))
-
-    # try:
-    #     json_dict = req.json()
-    #     results = json_dict.get("results")
-    #     print("Number of results: {}".format(len(results)))
-    #     for item in results:
-    #         print(item.get("name"))
-    # except ValueError as e:
-    #     print("Not a valid JSON")
