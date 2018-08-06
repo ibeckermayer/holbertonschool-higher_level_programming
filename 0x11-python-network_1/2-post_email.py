@@ -12,4 +12,4 @@ if __name__ == "__main__":
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
         the_body = response.read()
-        print(the_body)
+        print("Your email is: {}".format(the_body))
