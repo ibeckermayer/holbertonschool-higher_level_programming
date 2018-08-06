@@ -11,5 +11,5 @@ if __name__ == "__main__":
     data = data.encode('ascii')  # data should be bytes
     req = urllib.request.Request(url, data)
     with urllib.request.urlopen(req) as response:
-        the_body = response.read()
-        print("Your email is: {}".format(the_body))
+        the_body = response.read().decode('utf8')
+        print(the_body)
