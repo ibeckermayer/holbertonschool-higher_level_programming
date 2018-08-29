@@ -1,5 +1,4 @@
 #!/usr/bin/node
-let words = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-for (let i = 0; i < words.length; i++) {
-  console.log(words[i]);
-}
+console.log('C is fun');
+console.log('Python is cool');
+console.log('Javascript is amazing');
